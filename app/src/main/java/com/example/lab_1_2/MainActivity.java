@@ -4,9 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "MyLogs";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
-
+        Log.i(TAG, "Created");
     }
     @Override
     protected void onStart() {
@@ -27,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
+        Log.d(TAG, "Started");
     }
     @Override
     protected void onStop() {
@@ -37,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
+        Log.i(TAG, "Stopped");
     }
     @Override
     protected void onDestroy() {
@@ -46,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
+
+        Log.e(TAG, "AAAAAA. App is destroyed");
     }
     @Override
     protected void onPause() {
@@ -55,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
+        Log.w(TAG, "Paused");
     }
     @Override
     protected void onResume() {
@@ -64,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
+        Log.i(TAG, "Resumed");
     }
 
 
